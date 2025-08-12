@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SewerBit – Inspection Data & Video Management</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SewerBit: Revolutionize your PACP/LACP inspection data and video management with secure, efficient, and centralized tools. Launching soon!">
+  <meta name="keywords" content="sewer inspection, data management, video linking, PACP, LACP, infrastructure software">
+  <title>SewerBit – Revolutionizing Sewer Inspection Management</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     :root {
       --primary: #0078d7;
@@ -13,6 +17,8 @@
       --bg-light: #161b22;
       --text-light: #f0f6fc;
       --text-muted: #8b949e;
+      --white: #ffffff;
+      --gradient: linear-gradient(135deg, var(--primary-dark), var(--primary));
     }
     * {
       box-sizing: border-box;
@@ -20,120 +26,420 @@
       padding: 0;
     }
     body {
-      font-family: "Segoe UI", Roboto, Arial, sans-serif;
+      font-family: 'Inter', sans-serif;
       background: var(--bg-dark);
       color: var(--text-light);
       line-height: 1.6;
+      overflow-x: hidden;
     }
-    header {
-      padding: 4rem 1rem 3rem;
-      background: linear-gradient(135deg, var(--primary-dark), var(--primary));
-      text-align: center;
+    a {
+      text-decoration: none;
+      color: inherit;
     }
-    header h1 {
-      font-size: 3rem;
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    /* Navbar */
+    nav {
+      position: fixed;
+      width: 100%;
+      background: rgba(13, 17, 23, 0.8);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      padding: 1rem 0;
+      transition: background 0.3s;
+    }
+    nav.scrolled {
+      background: var(--bg-dark);
+    }
+    .nav-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-size: 1.5rem;
       font-weight: 700;
-      margin-bottom: 0.75rem;
-    }
-    header p {
-      font-size: 1.25rem;
-      color: var(--text-light);
-      max-width: 700px;
-      margin: 0 auto;
-      opacity: 0.9;
-    }
-    section {
-      padding: 3rem 1rem;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-    section h2 {
-      text-align: center;
-      font-size: 2rem;
-      margin-bottom: 2rem;
       color: var(--accent);
     }
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    .nav-links {
+      display: flex;
       gap: 2rem;
     }
-    .feature {
-      background: var(--bg-light);
-      padding: 2rem;
-      border-radius: 10px;
-      border: 1px solid rgba(255,255,255,0.05);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-    .feature:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 18px rgba(0,0,0,0.3);
-    }
-    .feature h3 {
-      color: var(--accent);
-      margin-bottom: 0.75rem;
-      font-size: 1.2rem;
-    }
-    .feature p {
-      font-size: 0.95rem;
-      color: var(--text-muted);
-    }
-    .coming-soon {
-      text-align: center;
-      margin-top: 3rem;
-      font-size: 1.5rem;
+    .nav-links a {
       font-weight: 500;
-      color: #ffcc80;
-      background: rgba(255, 204, 128, 0.05);
-      padding: 1rem 1.5rem;
-      border-radius: 8px;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+    /* Hero */
+    .hero {
+      height: 100vh;
+      background: var(--gradient);
+      display: flex;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://via.placeholder.com/1920x1080?text=Sewer+Inspection+Hero') no-repeat center/cover;
+      opacity: 0.2;
+      z-index: 1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .hero h1 {
+      font-size: 4rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      animation: fadeInDown 1s ease;
+    }
+    .hero p {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+      animation: fadeInUp 1s ease 0.5s;
+      animation-fill-mode: forwards;
+      opacity: 0;
+    }
+    .cta-btn {
+      background: var(--accent);
+      color: var(--white);
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: transform 0.3s, box-shadow 0.3s;
       display: inline-block;
     }
-    footer {
-      padding: 1.5rem;
-      text-align: center;
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      border-top: 1px solid rgba(255,255,255,0.05);
+    .cta-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 12px rgba(0, 178, 148, 0.5);
+    }
+    /* Signup Form */
+    .signup-form {
+      display: flex;
+      justify-content: center;
+      margin-top: 2rem;
+      animation: fadeInUp 1s ease 1s;
+      animation-fill-mode: forwards;
+      opacity: 0;
+    }
+    .signup-form input {
+      padding: 1rem;
+      border: none;
+      border-radius: 50px 0 0 50px;
+      width: 300px;
+      font-size: 1rem;
+    }
+    .signup-form button {
+      background: var(--accent);
+      color: var(--white);
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 0 50px 50px 0;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+    .signup-form button:hover {
+      background: darken(var(--accent), 10%);
+    }
+    /* Features */
+    .features-section {
+      padding: 6rem 0;
       background: var(--bg-light);
+    }
+    .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 3rem;
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    .feature-card {
+      background: var(--bg-dark);
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      transition: transform 0.3s, box-shadow 0.3s;
+      text-align: center;
+    }
+    .feature-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+    }
+    .feature-icon {
+      font-size: 3rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+    .feature-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--text-light);
+    }
+    .feature-card p {
+      color: var(--text-muted);
+    }
+    /* Benefits */
+    .benefits-section {
+      padding: 6rem 0;
+    }
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    .benefit {
+      text-align: center;
+    }
+    .benefit i {
+      font-size: 2.5rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+    .benefit h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+    /* Testimonials */
+    .testimonials-section {
+      padding: 6rem 0;
+      background: var(--bg-light);
+    }
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    .testimonial {
+      background: var(--bg-dark);
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+    .testimonial p {
+      font-style: italic;
+      margin-bottom: 1rem;
+    }
+    .testimonial-author {
+      font-weight: 600;
+      color: var(--accent);
+    }
+    /* CTA Section */
+    .cta-section {
+      padding: 6rem 0;
+      text-align: center;
+      background: var(--gradient);
+    }
+    .cta-section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .cta-section p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+    /* Coming Soon */
+    .coming-soon {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 600;
+      color: #ffcc80;
+      margin: 2rem 0;
+    }
+    /* Footer */
+    footer {
+      padding: 3rem 0;
+      background: var(--bg-dark);
+      border-top: 1px solid rgba(255,255,255,0.1);
+      text-align: center;
+    }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 1rem;
+    }
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .social-icons a {
+      font-size: 1.5rem;
+      color: var(--text-muted);
+      transition: color 0.3s;
+    }
+    .social-icons a:hover {
+      color: var(--accent);
+    }
+    /* Animations */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 3rem; }
+      .hero p { font-size: 1.2rem; }
+      .nav-links { display: none; } /* Add hamburger menu later */
     }
   </style>
 </head>
 <body>
-
-  <header>
-    <h1>SewerBit</h1>
-    <p>The smarter way to manage and review your PACP/LACP inspection data and videos – securely, efficiently, and in one place.</p>
-  </header>
-
-  <section>
-    <h2>Key Features</h2>
-    <div class="features">
-      <div class="feature">
-        <h3>Centralized Data</h3>
-        <p>Store, organize, and access all inspection records from a single, unified platform – no more scattered files and folders.</p>
-      </div>
-      <div class="feature">
-        <h3>Seamless Video Linking</h3>
-        <p>Upload and connect inspection videos directly to their related records for easy side-by-side viewing and review.</p>
-      </div>
-      <div class="feature">
-        <h3>Role-Based Permissions</h3>
-        <p>Ensure data integrity with user access levels – from field inspectors to quality control reviewers and administrators.</p>
-      </div>
-      <div class="feature">
-        <h3>Built for the Future</h3>
-        <p>Designed with expansion in mind, ready to integrate advanced tools like AI-assisted coding and predictive maintenance insights.</p>
+  <nav>
+    <div class="container nav-content">
+      <div class="logo">SewerBit</div>
+      <div class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#benefits">Benefits</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#cta">Get Started</a>
       </div>
     </div>
+  </nav>
 
-    <div class="coming-soon">🚀 Launching Soon – Stay Tuned</div>
+  <section class="hero">
+    <div class="hero-content container">
+      <h1>Transform Sewer Inspections with SewerBit</h1>
+      <p>The ultimate platform for managing PACP/LACP data and videos – secure, centralized, and built for efficiency.</p>
+      <a href="#cta" class="cta-btn">Join the Waitlist</a>
+      <form class="signup-form">
+        <input type="email" placeholder="Enter your email" required>
+        <button type="submit">Notify Me</button>
+      </form>
+    </div>
+  </section>
+
+  <section id="features" class="features-section">
+    <div class="container">
+      <h2 class="section-title">Powerful Features for Seamless Management</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <i class="fas fa-database feature-icon"></i>
+          <h3>Centralized Data Storage</h3>
+          <p>Organize all your inspection records in one secure place, eliminating scattered files and boosting productivity.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-video feature-icon"></i>
+          <h3>Seamless Video Integration</h3>
+          <p>Upload and link videos directly to records for intuitive review and analysis.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-users feature-icon"></i>
+          <h3>Role-Based Access Control</h3>
+          <p>Custom permissions ensure data security across teams, from inspectors to admins.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-robot feature-icon"></i>
+          <h3>Future-Ready AI Integration</h3>
+          <p>Prepared for AI-driven coding, predictive insights, and more to evolve with your needs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="benefits" class="benefits-section">
+    <div class="container">
+      <h2 class="section-title">Why Choose SewerBit?</h2>
+      <div class="benefits-grid">
+        <div class="benefit">
+          <i class="fas fa-shield-alt"></i>
+          <h3>Enhanced Security</h3>
+          <p>Protect sensitive data with enterprise-grade encryption and controls.</p>
+        </div>
+        <div class="benefit">
+          <i class="fas fa-clock"></i>
+          <h3>Time Savings</h3>
+          <p>Streamline workflows to reduce review time by up to 50%.</p>
+        </div>
+        <div class="benefit">
+          <i class="fas fa-chart-line"></i>
+          <h3>Actionable Insights</h3>
+          <p>Gain predictive maintenance tips to prevent costly issues.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonials" class="testimonials-section">
+    <div class="container">
+      <h2 class="section-title">What Our Beta Users Say</h2>
+      <div class="testimonial-grid">
+        <div class="testimonial">
+          <p>"SewerBit has transformed how we handle inspections – everything in one place!"</p>
+          <div class="testimonial-author">- John Doe, City Infrastructure Manager</div>
+        </div>
+        <div class="testimonial">
+          <p>"The video linking feature saves us hours every week. Highly recommend!"</p>
+          <div class="testimonial-author">- Jane Smith, Quality Control Lead</div>
+        </div>
+        <div class="testimonial">
+          <p>"Secure and user-friendly – perfect for our team."</p>
+          <div class="testimonial-author">- Mike Johnson, Field Inspector</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="cta" class="cta-section">
+    <div class="container">
+      <h2>Ready to Revolutionize Your Inspections?</h2>
+      <p>Join the waitlist and be the first to experience SewerBit.</p>
+      <form class="signup-form" style="margin: 0 auto; max-width: 500px;">
+        <input type="email" placeholder="Enter your email" required>
+        <button type="submit">Sign Up Now</button>
+      </form>
+      <div class="coming-soon">🚀 Launching Q4 2025 – Stay Tuned!</div>
+    </div>
   </section>
 
   <footer>
-    &copy; 2025 SewerBit. All rights reserved.
+    <div class="container">
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Contact Us</a>
+      </div>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-github"></i></a>
+      </div>
+      <p>&copy; 2025 SewerBit. All rights reserved.</p>
+    </div>
   </footer>
 
+  <script>
+    // Simple scroll effect for nav
+    window.addEventListener('scroll', () => {
+      document.querySelector('nav').classList.toggle('scrolled', window.scrollY > 0);
+    });
+  </script>
 </body>
 </html>
