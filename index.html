@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="SewerBit: Revolutionize your PACP/LACP inspection data and video management with secure, efficient, and centralized tools. Launching soon!">
-  <meta name="keywords" content="sewer inspection, data management, video linking, PACP, LACP, infrastructure software">
-  <title>SewerBit – Revolutionizing Sewer Inspection Management</title>
+  <meta name="description" content="SewerBit: Revolutionize sewer infrastructure management with AI-powered PACP/LACP inspection data, video handling, GIS mapping, and rehabilitation analysis. Secure, efficient, and future-proof. Launching Q4 2025!">
+  <meta name="keywords" content="sewer inspection, data management, video linking, PACP, LACP, AI assessment, rehabilitation, GIS mapping, infrastructure software">
+  <title>SewerBit – AI-Powered Sewer Infrastructure Management</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
@@ -19,6 +19,7 @@
       --text-muted: #8b949e;
       --white: #ffffff;
       --gradient: linear-gradient(135deg, var(--primary-dark), var(--primary));
+      --shadow: 0 4px 20px rgba(0,0,0,0.3);
     }
     * {
       box-sizing: border-box;
@@ -92,34 +93,33 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: url('https://via.placeholder.com/1920x1080?text=Sewer+Inspection+Hero') no-repeat center/cover;
+      background: url('https://via.placeholder.com/1920x1080?text=AI+Sewer+Infrastructure+Hero') no-repeat center/cover;
       opacity: 0.2;
       z-index: 1;
     }
     .hero-content {
       position: relative;
       z-index: 2;
-      max-width: 800px;
+      max-width: 900px;
       margin: 0 auto;
     }
     .hero h1 {
-      font-size: 4rem;
+      font-size: 4.5rem;
       font-weight: 800;
       margin-bottom: 1rem;
       animation: fadeInDown 1s ease;
     }
     .hero p {
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       margin-bottom: 2rem;
       opacity: 0.9;
-      animation: fadeInUp 1s ease 0.5s;
-      animation-fill-mode: forwards;
+      animation: fadeInUp 1s ease 0.5s forwards;
       opacity: 0;
     }
     .cta-btn {
       background: var(--accent);
       color: var(--white);
-      padding: 1rem 2rem;
+      padding: 1rem 2.5rem;
       border-radius: 50px;
       font-weight: 600;
       transition: transform 0.3s, box-shadow 0.3s;
@@ -134,15 +134,14 @@
       display: flex;
       justify-content: center;
       margin-top: 2rem;
-      animation: fadeInUp 1s ease 1s;
-      animation-fill-mode: forwards;
+      animation: fadeInUp 1s ease 1s forwards;
       opacity: 0;
     }
     .signup-form input {
       padding: 1rem;
       border: none;
       border-radius: 50px 0 0 50px;
-      width: 300px;
+      width: 350px;
       font-size: 1rem;
     }
     .signup-form button {
@@ -156,7 +155,7 @@
       transition: background 0.3s;
     }
     .signup-form button:hover {
-      background: darken(var(--accent), 10%);
+      background: #009c7e;
     }
     /* Features */
     .features-section {
@@ -179,7 +178,7 @@
       background: var(--bg-dark);
       padding: 2rem;
       border-radius: 15px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      box-shadow: var(--shadow);
       transition: transform 0.3s, box-shadow 0.3s;
       text-align: center;
     }
@@ -199,6 +198,71 @@
     }
     .feature-card p {
       color: var(--text-muted);
+    }
+    .feature-card ul {
+      list-style: none;
+      text-align: left;
+      margin-top: 1rem;
+    }
+    .feature-card li {
+      margin-bottom: 0.5rem;
+      position: relative;
+      padding-left: 1.5rem;
+    }
+    .feature-card li::before {
+      content: '\f058';
+      font-family: 'Font Awesome 6 Free';
+      color: var(--accent);
+      position: absolute;
+      left: 0;
+    }
+    /* How It Works */
+    .how-it-works-section {
+      padding: 6rem 0;
+    }
+    .steps {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+    .step {
+      flex: 1 1 300px;
+      background: var(--bg-light);
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+    .step-number {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+    /* Integrations */
+    .integrations-section {
+      padding: 6rem 0;
+      background: var(--bg-light);
+    }
+    .integrations-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+    .integration {
+      background: var(--bg-dark);
+      padding: 1rem 2rem;
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .integration i {
+      font-size: 2rem;
+      color: var(--primary);
     }
     /* Benefits */
     .benefits-section {
@@ -221,10 +285,22 @@
       font-size: 1.3rem;
       margin-bottom: 0.5rem;
     }
+    /* Demo Video */
+    .demo-section {
+      padding: 6rem 0;
+      background: var(--bg-light);
+      text-align: center;
+    }
+    .demo-video {
+      max-width: 800px;
+      margin: 0 auto;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
     /* Testimonials */
     .testimonials-section {
       padding: 6rem 0;
-      background: var(--bg-light);
     }
     .testimonial-grid {
       display: grid;
@@ -232,10 +308,10 @@
       gap: 2rem;
     }
     .testimonial {
-      background: var(--bg-dark);
+      background: var(--bg-light);
       padding: 2rem;
       border-radius: 15px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      box-shadow: var(--shadow);
     }
     .testimonial p {
       font-style: italic;
@@ -244,6 +320,85 @@
     .testimonial-author {
       font-weight: 600;
       color: var(--accent);
+    }
+    /* FAQ */
+    .faq-section {
+      padding: 6rem 0;
+      background: var(--bg-light);
+    }
+    .faq-item {
+      margin-bottom: 1rem;
+    }
+    .faq-question {
+      cursor: pointer;
+      font-weight: 600;
+      color: var(--accent);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .faq-answer {
+      display: none;
+      margin-top: 0.5rem;
+      color: var(--text-muted);
+    }
+    /* Pricing Teaser */
+    .pricing-section {
+      padding: 6rem 0;
+      text-align: center;
+    }
+    .pricing-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+    .pricing-card {
+      flex: 1 1 300px;
+      background: var(--bg-light);
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: var(--shadow);
+    }
+    .pricing-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .price {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+    .pricing-card ul {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+    .pricing-card li {
+      margin-bottom: 0.5rem;
+    }
+    /* Blog Teaser */
+    .blog-section {
+      padding: 6rem 0;
+      background: var(--bg-light);
+    }
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    .blog-post {
+      background: var(--bg-dark);
+      padding: 1.5rem;
+      border-radius: 15px;
+      box-shadow: var(--shadow);
+    }
+    .blog-post h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+    .blog-post p {
+      color: var(--text-muted);
     }
     /* CTA Section */
     .cta-section {
@@ -266,6 +421,9 @@
       font-weight: 600;
       color: #ffcc80;
       margin: 2rem 0;
+      background: rgba(255, 204, 128, 0.1);
+      padding: 1rem;
+      border-radius: 10px;
     }
     /* Footer */
     footer {
@@ -307,7 +465,8 @@
     @media (max-width: 768px) {
       .hero h1 { font-size: 3rem; }
       .hero p { font-size: 1.2rem; }
-      .nav-links { display: none; } /* Add hamburger menu later */
+      .nav-links { display: none; } /* Hamburger menu can be added */
+      .steps, .integrations-grid, .pricing-cards { flex-direction: column; }
     }
   </style>
 </head>
@@ -317,8 +476,14 @@
       <div class="logo">SewerBit</div>
       <div class="nav-links">
         <a href="#features">Features</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#integrations">Integrations</a>
         <a href="#benefits">Benefits</a>
+        <a href="#demo">Demo</a>
         <a href="#testimonials">Testimonials</a>
+        <a href="#faq">FAQ</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#blog">Blog</a>
         <a href="#cta">Get Started</a>
       </div>
     </div>
@@ -326,11 +491,11 @@
 
   <section class="hero">
     <div class="hero-content container">
-      <h1>Transform Sewer Inspections with SewerBit</h1>
-      <p>The ultimate platform for managing PACP/LACP data and videos – secure, centralized, and built for efficiency.</p>
-      <a href="#cta" class="cta-btn">Join the Waitlist</a>
+      <h1>Empower Your Sewer Infrastructure with AI-Driven Insights</h1>
+      <p>Manage PACP/LACP inspections, videos, GIS mapping, and AI-assisted assessments & rehabilitations in one secure platform. Built for efficiency, scalability, and the future of urban infrastructure.</p>
+      <a href="#cta" class="cta-btn">Join the Waitlist Today</a>
       <form class="signup-form">
-        <input type="email" placeholder="Enter your email" required>
+        <input type="email" placeholder="Enter your email for updates" required>
         <button type="submit">Notify Me</button>
       </form>
     </div>
@@ -338,70 +503,278 @@
 
   <section id="features" class="features-section">
     <div class="container">
-      <h2 class="section-title">Powerful Features for Seamless Management</h2>
+      <h2 class="section-title">Cutting-Edge Features for Modern Infrastructure Management</h2>
       <div class="features-grid">
         <div class="feature-card">
           <i class="fas fa-database feature-icon"></i>
-          <h3>Centralized Data Storage</h3>
-          <p>Organize all your inspection records in one secure place, eliminating scattered files and boosting productivity.</p>
+          <h3>Centralized Data Hub</h3>
+          <p>Store, organize, and access all inspection records securely in one place.</p>
+          <ul>
+            <li>Automated backups and version control</li>
+            <li>Custom metadata tagging</li>
+            <li>Real-time collaboration</li>
+          </ul>
         </div>
         <div class="feature-card">
           <i class="fas fa-video feature-icon"></i>
           <h3>Seamless Video Integration</h3>
-          <p>Upload and link videos directly to records for intuitive review and analysis.</p>
+          <p>Upload, link, and review videos alongside data for comprehensive analysis.</p>
+          <ul>
+            <li>High-resolution streaming</li>
+            <li>Annotation tools</li>
+            <li>Timeline syncing with defects</li>
+          </ul>
         </div>
         <div class="feature-card">
           <i class="fas fa-users feature-icon"></i>
           <h3>Role-Based Access Control</h3>
-          <p>Custom permissions ensure data security across teams, from inspectors to admins.</p>
+          <p>Secure data with granular permissions for teams of all sizes.</p>
+          <ul>
+            <li>Audit logs and compliance reporting</li>
+            <li>Multi-factor authentication</li>
+            <li>Custom roles and workflows</li>
+          </ul>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-map-marked-alt feature-icon"></i>
+          <h3>GIS Mapping & Visualization</h3>
+          <p>Overlay inspections on interactive maps for spatial insights and planning.</p>
+          <ul>
+            <li>Integration with Google Maps/ESRI</li>
+            <li>Heatmaps for defect density</li>
+            <li>Route optimization for field teams</li>
+          </ul>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-brain feature-icon"></i>
+          <h3>AI-Powered Assessment</h3>
+          <p>Automated defect detection and severity scoring using advanced AI models.</p>
+          <ul>
+            <li>Computer vision for pipe conditions</li>
+            <li>Predictive analytics for failures</li>
+            <li>Customizable AI training</li>
+          </ul>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-tools feature-icon"></i>
+          <h3>Rehabilitation AI Assistance</h3>
+          <p>AI-driven recommendations for rehab strategies, cost estimates, and material selection.</p>
+          <ul>
+            <li>Simulation of repair scenarios</li>
+            <li>Budget optimization algorithms</li>
+            <li>Integration with asset management</li>
+          </ul>
         </div>
         <div class="feature-card">
           <i class="fas fa-robot feature-icon"></i>
-          <h3>Future-Ready AI Integration</h3>
-          <p>Prepared for AI-driven coding, predictive insights, and more to evolve with your needs.</p>
+          <h3>Future-Proof Extensibility</h3>
+          <p>Ready for IoT sensors, VR reviews, and blockchain-secured data.</p>
+          <ul>
+            <li>API for custom integrations</li>
+            <li>Scalable cloud architecture</li>
+            <li>Regular AI model updates</li>
+          </ul>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="how-it-works" class="how-it-works-section">
+    <div class="container">
+      <h2 class="section-title">How SewerBit Works</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h3>Upload & Organize</h3>
+          <p>Import PACP/LACP data and videos effortlessly, with auto-tagging and mapping.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <h3>Analyze with AI</h3>
+          <p>Use AI to assess conditions, detect issues, and suggest rehabs on interactive maps.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <h3>Collaborate & Act</h3>
+          <p>Share insights, track progress, and export reports for decisive action.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="integrations" class="integrations-section">
+    <div class="container">
+      <h2 class="section-title">Seamless Integrations</h2>
+      <div class="integrations-grid">
+        <div class="integration"><i class="fas fa-map"></i> Google Maps / ESRI ArcGIS</div>
+        <div class="integration"><i class="fab fa-aws"></i> AWS / Azure Cloud</div>
+        <div class="integration"><i class="fas fa-file-excel"></i> Excel / CSV Export</div>
+        <div class="integration"><i class="fab fa-slack"></i> Slack / Teams Notifications</div>
+        <div class="integration"><i class="fas fa-robot"></i> Custom AI Models via API</div>
+        <div class="integration"><i class="fas fa-database"></i> ERP / Asset Management Systems</div>
       </div>
     </div>
   </section>
 
   <section id="benefits" class="benefits-section">
     <div class="container">
-      <h2 class="section-title">Why Choose SewerBit?</h2>
+      <h2 class="section-title">Unlock Transformative Benefits</h2>
       <div class="benefits-grid">
         <div class="benefit">
           <i class="fas fa-shield-alt"></i>
-          <h3>Enhanced Security</h3>
-          <p>Protect sensitive data with enterprise-grade encryption and controls.</p>
+          <h3>Enterprise-Grade Security</h3>
+          <p>GDPR-compliant encryption, SOC 2 certified, and zero-trust architecture.</p>
         </div>
         <div class="benefit">
           <i class="fas fa-clock"></i>
-          <h3>Time Savings</h3>
-          <p>Streamline workflows to reduce review time by up to 50%.</p>
+          <h3>50% Faster Workflows</h3>
+          <p>AI automation reduces manual reviews and planning time dramatically.</p>
         </div>
         <div class="benefit">
           <i class="fas fa-chart-line"></i>
-          <h3>Actionable Insights</h3>
-          <p>Gain predictive maintenance tips to prevent costly issues.</p>
+          <h3>Predictive Insights</h3>
+          <p>Prevent failures with AI forecasts, saving millions in emergency repairs.</p>
         </div>
+        <div class="benefit">
+          <i class="fas fa-globe"></i>
+          <h3>Scalable for Cities</h3>
+          <p>Handle terabytes of data for small towns to mega-cities seamlessly.</p>
+        </div>
+        <div class="benefit">
+          <i class="fas fa-users-cog"></i>
+          <h3>Team Empowerment</h3>
+          <p>Intuitive UI/UX with training resources and 24/7 support.</p>
+        </div>
+        <div class="benefit">
+          <i class="fas fa-leaf"></i>
+          <h3>Sustainable Practices</h3>
+          <p>Optimize rehabs to minimize environmental impact and costs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="demo" class="demo-section">
+    <div class="container">
+      <h2 class="section-title">See SewerBit in Action</h2>
+      <div class="demo-video">
+        <iframe width="100%" height="450" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="SewerBit Demo" frameborder="0" allowfullscreen></iframe> <!-- Placeholder video -->
       </div>
     </div>
   </section>
 
   <section id="testimonials" class="testimonials-section">
     <div class="container">
-      <h2 class="section-title">What Our Beta Users Say</h2>
+      <h2 class="section-title">Hear from Industry Leaders</h2>
       <div class="testimonial-grid">
         <div class="testimonial">
-          <p>"SewerBit has transformed how we handle inspections – everything in one place!"</p>
-          <div class="testimonial-author">- John Doe, City Infrastructure Manager</div>
+          <p>"SewerBit's AI rehab analysis has revolutionized our planning – saving us 40% on projects!"</p>
+          <div class="testimonial-author">- Alex Rivera, Municipal Engineer</div>
         </div>
         <div class="testimonial">
-          <p>"The video linking feature saves us hours every week. Highly recommend!"</p>
-          <div class="testimonial-author">- Jane Smith, Quality Control Lead</div>
+          <p>"The map integration makes visualizing assets a breeze. Essential for our team."</p>
+          <div class="testimonial-author">- Sarah Lee, Infrastructure Director</div>
         </div>
         <div class="testimonial">
-          <p>"Secure and user-friendly – perfect for our team."</p>
-          <div class="testimonial-author">- Mike Johnson, Field Inspector</div>
+          <p>"Secure, intuitive, and powerful – SewerBit is the future of sewer management."</p>
+          <div class="testimonial-author">- Tom Harris, Quality Assurance Lead</div>
+        </div>
+        <div class="testimonial">
+          <p>"AI assessments are spot-on, reducing human error and speeding up decisions."</p>
+          <div class="testimonial-author">- Emily Chen, Field Supervisor</div>
+        </div>
+        <div class="testimonial">
+          <p>"From data upload to rehab recommendations, it's all seamless."</p>
+          <div class="testimonial-author">- David Patel, City Planner</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="faq-section">
+    <div class="container">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <div class="faq-question">What is SewerBit? <i class="fas fa-chevron-down"></i></div>
+        <div class="faq-answer">SewerBit is an AI-powered platform for managing sewer inspections, videos, mapping, and rehabilitation analysis.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">How does the AI work? <i class="fas fa-chevron-down"></i></div>
+        <div class="faq-answer">Our AI uses machine learning to detect defects, assess severity, and recommend optimal rehab strategies based on data.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Is it secure? <i class="fas fa-chevron-down"></i></div>
+        <div class="faq-answer">Yes, with end-to-end encryption, role-based access, and compliance with industry standards.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">When does it launch? <i class="fas fa-chevron-down"></i></div>
+        <div class="faq-answer">Q4 2025 – join the waitlist for early access!</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">What integrations are supported? <i class="fas fa-chevron-down"></i></div>
+        <div class="faq-answer">GIS tools, cloud storage, notification apps, and more via API.</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing" class="pricing-section">
+    <div class="container">
+      <h2 class="section-title">Flexible Pricing Plans (Coming Soon)</h2>
+      <div class="pricing-cards">
+        <div class="pricing-card">
+          <h3>Starter</h3>
+          <div class="price">$99/mo</div>
+          <ul>
+            <li>Basic data management</li>
+            <li>Video linking</li>
+            <li>Role-based access</li>
+          </ul>
+          <a href="#cta" class="cta-btn">Join Waitlist</a>
+        </div>
+        <div class="pricing-card">
+          <h3>Pro</h3>
+          <div class="price">$299/mo</div>
+          <ul>
+            <li>All Starter features</li>
+            <li>GIS mapping</li>
+            <li>AI assessment</li>
+            <li>Integrations</li>
+          </ul>
+          <a href="#cta" class="cta-btn">Join Waitlist</a>
+        </div>
+        <div class="pricing-card">
+          <h3>Enterprise</h3>
+          <div class="price">Custom</div>
+          <ul>
+            <li>All Pro features</li>
+            <li>Rehab AI</li>
+            <li>Dedicated support</li>
+            <li>Custom AI training</li>
+          </ul>
+          <a href="#cta" class="cta-btn">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="blog" class="blog-section">
+    <div class="container">
+      <h2 class="section-title">Latest Insights from Our Blog</h2>
+      <div class="blog-grid">
+        <div class="blog-post">
+          <h3>The Role of AI in Sewer Rehabilitation</h3>
+          <p>Explore how AI is transforming urban infrastructure maintenance in 2025.</p>
+          <a href="#">Read More</a>
+        </div>
+        <div class="blog-post">
+          <h3>GIS Mapping: A Game-Changer for Inspections</h3>
+          <p>Learn best practices for visualizing sewer data on maps.</p>
+          <a href="#">Read More</a>
+        </div>
+        <div class="blog-post">
+          <h3>Future Trends in Sewer Management</h3>
+          <p>From IoT to predictive analytics – what's next?</p>
+          <a href="#">Read More</a>
         </div>
       </div>
     </div>
@@ -409,13 +782,13 @@
 
   <section id="cta" class="cta-section">
     <div class="container">
-      <h2>Ready to Revolutionize Your Inspections?</h2>
-      <p>Join the waitlist and be the first to experience SewerBit.</p>
+      <h2>Ready to Elevate Your Sewer Management?</h2>
+      <p>Sign up for the waitlist and get exclusive early access, plus a free consultation.</p>
       <form class="signup-form" style="margin: 0 auto; max-width: 500px;">
         <input type="email" placeholder="Enter your email" required>
-        <button type="submit">Sign Up Now</button>
+        <button type="submit">Join Now</button>
       </form>
-      <div class="coming-soon">🚀 Launching Q4 2025 – Stay Tuned!</div>
+      <div class="coming-soon">🚀 Launching Q4 2025 – Be the First to Know!</div>
     </div>
   </section>
 
@@ -425,9 +798,10 @@
         <a href="#">Privacy Policy</a>
         <a href="#">Terms of Service</a>
         <a href="#">Contact Us</a>
+        <a href="#">About Us</a>
       </div>
       <div class="social-icons">
-        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
         <a href="#"><i class="fab fa-linkedin"></i></a>
         <a href="#"><i class="fab fa-github"></i></a>
       </div>
@@ -436,9 +810,16 @@
   </footer>
 
   <script>
-    // Simple scroll effect for nav
+    // Scroll effect for nav
     window.addEventListener('scroll', () => {
       document.querySelector('nav').classList.toggle('scrolled', window.scrollY > 0);
+    });
+    // FAQ toggle
+    document.querySelectorAll('.faq-question').forEach(item => {
+      item.addEventListener('click', () => {
+        const answer = item.nextElementSibling;
+        answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+      });
     });
   </script>
 </body>
